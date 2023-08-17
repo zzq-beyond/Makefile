@@ -10,13 +10,15 @@ C_FLAGS = -g -Wall
 LD = $(CC)
 
 INCLUDES += -I$(INCLUDE_DIR) \
-            -I/usr/local/include/opencv4/ \
+            -I/usr/local/include/opencv4 \
 			-I/opt/boost/include \
+			-I/opt/intel/openvino_2022/runtime/include
 			
 
 
-LD_FLAGS += -L/usr/local/lib/ \
-			-L/opt/boost/lib/ \
+LD_FLAGS += -L/usr/local/lib \
+			-L/opt/boost/lib \
+			-L/opt/intel/openvino_2022/runtime/lib/intel64
 			
 
 LD_LIBS += -lopencv_core \
@@ -25,6 +27,8 @@ LD_LIBS += -lopencv_core \
            -lopencv_imgproc \
 		   -lboost_filesystem \
 		   -lboost_json \
+		   -lopenvino
+		   
 		   
 
 
