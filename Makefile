@@ -1,4 +1,4 @@
-TARGET = run
+TARGET = pro
 
 SRC_DIR = ./src/cpp
 SRC_SUBDIR += . 
@@ -40,9 +40,10 @@ OBJS += ${foreach src, $(notdir $(SRCS)), ${patsubst %.$(TYPE), $(OBJ_DIR)/%.o, 
 
 vpath %.$(TYPE) $(sort $(dir $(SRCS)))
 
-all : $(TARGET)
+run : $(TARGET)
 	@echo "Builded target:" $^
-	@echo "Done"
+	@echo "Done.\n\n"
+	@./pro
 
 $(TARGET) : $(OBJS)
 	@mkdir -p $(@D)
